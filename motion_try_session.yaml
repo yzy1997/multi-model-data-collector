@@ -1,0 +1,51 @@
+output:
+  path: output # Folder to which the data should be saved to
+  filename: merge.csv    # Filename template, which will be extended with
+                # a number when multiple data collections are done
+devices:         # List of adress-path objects.
+# - address: 0C:8C:DC:34:E8:FE # MoveSense device address  201530001947 
+#   paths:                     # List of sensor paths to subscribe to
+#   - /Meas/IMU9/52             # Find more details in MoveSense
+#                               #  official documentation.
+# - address: 0C:8C:DC:35:D9:56 # 202930001817 
+#   paths:
+#   - /Meas/IMU9/52
+
+# - address: 0C:8C:DC:22:32:DC # 175030000733 
+#   paths:
+#   - /Meas/IMU9/52
+
+# - address: 0C:8C:DC:34:CA:24 # 201330000383 
+#   paths:
+#   - /Meas/IMU9/52
+
+# - address: 0C:8C:DC:22:46:0F # 175030001171
+#   paths:
+#   - /Meas/IMU9/52
+
+
+- address: 0C:8C:DC:1B:73:5A # 240930000231
+  paths:
+  - /Meas/IMU9/52
+
+- address: 0C:8C:DC:34:E9:30 # 201530001997 
+  paths:
+  - /Meas/IMU9/52
+
+- address: 0C:8C:DC:1B:73:62 # 240930000239
+  paths:
+  - /Meas/IMU9/52
+
+- address: 0C:8C:DC:1B:73:59 # 240930000230 
+  paths:
+  - /Meas/IMU9/52
+
+- address: 0C:8C:DC:1B:73:60 # 240930000237
+  paths:
+  - /Meas/IMU9/52
+
+- address: 0C:8C:DC:1B:73:43 # 240930000208
+  paths:
+  - /Meas/IMU9/52
+ 
+
