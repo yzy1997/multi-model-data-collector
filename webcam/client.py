@@ -5,11 +5,15 @@ import queue
 import os
 from datetime import datetime
 
+base_path = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/webcam/data/"
+
 def listen_for_input(input_queue):
-    host='192.168.1.137' #client ip, substitute this with your concrate local ip addr
+    # host='192.168.1.137' #client ip, substitute this with your concrate local ip addr
+    host = '127.0.0.1'
     port = 8000
     
-    server = ('192.168.1.137', 5000) # server ip
+    # server = ('192.168.1.137', 5000) # server ip
+    server = ('127.0.0.1', 5000)
     
     c = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     c.bind((host,port))
@@ -63,9 +67,11 @@ def video_shooting():
                 # fps = video_capture.get(5)
                 
                 fourcc = cv2.VideoWriter_fourcc(*'DIVX')
-                filename = update_file_name()
-                out = cv2.VideoWriter(filename, fourcc, fps, frame_size)
-                filename_txt = filename.replace('.avi', '.csv')
+                filename = update_file_name("output.avi")
+                synthetic_filename = base_path + filename
+                print(f"Recording to {synthetic_filename}")
+                out = cv2.VideoWriter(synthetic_filename, fourcc, fps, frame_size)
+                filename_txt = synthetic_filename.replace('.avi', '.csv')
                 with open(filename_txt, 'w', encoding='utf-8') as f:
                     f.write(f"Timestamp, Id, Get Frame\n")
                 is_recording = True
@@ -108,15 +114,16 @@ def video_shooting():
 
 # This function will update the file name
 def update_file_name(filename=None):
+    
     if filename is not None:
         filename_, extension = os.path.splitext(filename)
         counter = 1
-        while os.path.exists(filename):
+        while os.path.exists(base_path+filename):
             filename = f"{filename_}_{counter}{extension}"
             counter += 1
-    elif os.path.exists("output.avi"):
+    elif os.path.exists(base_path+"output.avi"):
         counter = 1
-        while os.path.exists(f"output_{counter}.avi"):
+        while os.path.exists(base_path+f"output_{counter}.avi"):
             counter += 1
         filename = f"output_{counter}.avi"
     else:

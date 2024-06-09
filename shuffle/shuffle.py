@@ -33,10 +33,10 @@ def list_to_file(activities: list, file_name: str = None) -> None:
         file_name = input(f"please input the name of shuffled activities file (default: 'subject.txt') -> ") or "subject.txt"
     filename, extension = os.path.splitext(file_name)
     counter = 1
-    while os.path.exists("shuffle/records/" + file_name):
+    while os.path.exists("multi-model-data-collector/shuffle/records/" + file_name):
         file_name = f"{filename}_{counter}{extension}"
         counter += 1
-    with open("shuffle/records/" + file_name, "w") as f:
+    with open("multi-model-data-collector/shuffle/records/" + file_name, "w") as f:
         for activity in activities:
             f.write(f"{activity}, {activities_dict[activity]}\n")
 

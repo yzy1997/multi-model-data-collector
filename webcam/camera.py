@@ -4,6 +4,8 @@ import threading
 import queue
 import os
 
+base_path = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/webcam/data/"
+
 # This function will run in a separate thread to listen for input
 def listen_for_input(input_queue):
     while True:
@@ -13,7 +15,7 @@ def listen_for_input(input_queue):
 # This function will run in the main thread to record video
 def video_shooting(control_bit):
     # Set up video capture
-    video_capture = cv2.VideoCapture(4)
+    video_capture = cv2.VideoCapture(0)
     frame_size = (int(video_capture.get(cv2.CAP_PROP_FRAME_WIDTH)),
                   int(video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT)))
     fps = video_capture.get(cv2.CAP_PROP_FPS)
@@ -23,7 +25,9 @@ def video_shooting(control_bit):
     # Set up video writer
     fourcc = cv2.VideoWriter_fourcc(*'DIVX')
     filename = update_file_name("output.avi")
-    out = cv2.VideoWriter(filename, fourcc, fps, frame_size)
+    synthetic_filename = base_path + filename
+    print(f"Recording to {synthetic_filename}")
+    out = cv2.VideoWriter(synthetic_filename, fourcc, fps, frame_size)
 
     # Input queue to receive input from the thread
     input_queue = queue.Queue()
@@ -62,15 +66,16 @@ def video_shooting(control_bit):
 
 # This function will update the file name
 def update_file_name(filename=None):
+    
     if filename is not None:
         filename_, extension = os.path.splitext(filename)
         counter = 1
-        while os.path.exists(filename):
+        while os.path.exists(base_path+filename):
             filename = f"{filename_}_{counter}{extension}"
             counter += 1
-    elif os.path.exists("output.avi"):
+    elif os.path.exists(base_path+"output.avi"):
         counter = 1
-        while os.path.exists(f"output_{counter}.avi"):
+        while os.path.exists(base_path+f"output_{counter}.avi"):
             counter += 1
         filename = f"output_{counter}.avi"
     else:
