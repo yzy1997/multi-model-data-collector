@@ -23,13 +23,13 @@ on desktop devices, with ease of connectivity to multiple devices and combining 
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/HerraHiekka/MoveSenseDataCollectior.git
+    git clone https://github.com/yzy1997/multi-model-data-collector.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd movesense-data-collector
+    cd multi-model-data-collector
     ```
 
 3. Install the required dependencies:
@@ -63,7 +63,7 @@ the CLI will look for "session.yaml" from root. If not found, a plain, empty ses
 connected to and paths subscribed to during runtime.
 
     ```bash
-    python -m main  --session "session.yaml"
+    python3 -m main  --session "session.yaml"
     ```
 
 4. Follow the on-screen instructions to start and end data collection.
