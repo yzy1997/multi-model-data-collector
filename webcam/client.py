@@ -5,15 +5,15 @@ import queue
 import os
 from datetime import datetime
 
-base_path = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/webcam/data/"
+base_path = "/home/researcher/multi-model-data-collector/webcam/data/"
 
 def listen_for_input(input_queue):
-    # host='192.168.1.137' #client ip, substitute this with your concrate local ip addr
-    host = '127.0.0.1'
+    host='192.168.1.4' #client ip, substitute this with your concrate local ip addr
+    # host = '127.0.0.1'
     port = 8000
     
-    # server = ('192.168.1.137', 5000) # server ip
-    server = ('127.0.0.1', 5000)
+    server = ('192.168.1.4', 5000) # server ip
+    # server = ('127.0.0.1', 5000)
     
     c = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     c.bind((host,port))
