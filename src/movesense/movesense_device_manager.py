@@ -267,7 +267,7 @@ class MovesenseDeviceManager:
         # weak_df_pivot = weakref.ref(df_pivot)
 
         # sort by timestamp
-        df_pivot.sort_values(by="timestamp", inplace=True)
+        # df_pivot.sort_values(by="timestamp", inplace=True)
 
         # delete the relative_id column
         df_pivot.drop('relative_id', axis=1, inplace=True)
