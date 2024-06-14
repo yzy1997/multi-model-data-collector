@@ -5,7 +5,7 @@ import queue
 import os
 from datetime import datetime
 
-base_path = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/webcam/data/"
+base_path = "/home/researcher/multi-model-data-collector/webcam/data/"
 
 # This function will run in a separate thread to listen for input
 def listen_for_input(input_queue):

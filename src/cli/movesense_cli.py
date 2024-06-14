@@ -268,9 +268,9 @@ class MovesenseCLI:
  ############This is the function for listening to the signals from the server################
 
     def listen_for_signals(self, input_queue, port):
-        host = '192.168.1.137'
+        host = '192.168.1.4'
 
-        server = ('192.168.1.137', 5000)
+        server = ('192.168.1.4', 5000)
 
         c = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         c.bind((host, port))
