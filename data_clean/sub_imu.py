@@ -58,6 +58,6 @@ def sub_imu_2(file_first, file_last):
         print(rows_file1, rows_file2, output_file_path)
         file_path2 = file_path2 + '.csv'
     
-file_first = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/output/merge_2.csv"
-file_last = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/output/merge_2_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1.csv"
+file_first = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/output/merge_4.csv"
+file_last  = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/output/merge_4_1_1_1_1_1.csv"
 sub_imu_2(file_first, file_last)
