@@ -57,7 +57,9 @@ def sub_imu_2(file_first, file_last):
         df2_subset.to_csv(output_file_path, index=False)
         print(rows_file1, rows_file2, output_file_path)
         file_path2 = file_path2 + '.csv'
+
+# handled two subject2 files
     
-file_first = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/output/merge_4.csv"
-file_last  = "/u/44/yangz2/unix/Documents/vs_code_programs/multi-model-data-collector/multi-model-data-collector/output/merge_4_1_1_1_1_1.csv"
+file_first = "/u/44/yangz2/unix/Downloads/subject31-20240713T122039Z-001/subject31/laptop2/output/merge_4.csv"
+file_last  = "/u/44/yangz2/unix/Downloads/subject31-20240713T122039Z-001/subject31/laptop2/output/merge_4_1_1_1_1_1.csv"
 sub_imu_2(file_first, file_last)

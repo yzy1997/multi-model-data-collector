@@ -7,25 +7,25 @@ devices:         # List of adress-path objects.
 #   paths:                     # List of sensor paths to subscribe to
 #   - /Meas/IMU9/52             # Find more details in MoveSense
 #                               #  official documentation.
-- address: 0C:8C:DC:36:0C:A2 # 203130000438 Left Forearm (LF)
-  paths:
-  - /Meas/IMU9/52
+# - address: 0C:8C:DC:36:0C:A2 # 203130000438 Left Forearm (LF)
+#   paths:
+#   - /Meas/IMU9/52
 
 - address: 0C:8C:DC:22:32:DC # 175030000733 Right Forearm (RF)
   paths:
   - /Meas/IMU9/52
 
-- address: 0C:8C:DC:34:CA:24 # 201330000383 Left Upper Arm (LU)
-  paths:
-  - /Meas/IMU9/52
+# - address: 0C:8C:DC:34:CA:24 # 201330000383 Left Upper Arm (LU)
+#   paths:
+#   - /Meas/IMU9/52
 
-- address: 0C:8C:DC:22:46:0F # 175030001171 Right Upper Arm (RU)
-  paths:
-  - /Meas/IMU9/52
+# - address: 0C:8C:DC:22:46:0F # 175030001171 Right Upper Arm (RU)
+#   paths:
+#   - /Meas/IMU9/52
 
-- address: 0C:8C:DC:1B:73:60 # 240930000237 Chest (CHS)
-  paths:
-  - /Meas/IMU9/52
+# - address: 0C:8C:DC:1B:73:60 # 240930000237 Chest (CHS)
+#   paths:
+#   - /Meas/IMU9/52
 
 # - address: 0C:8C:DC:1B:73:5A # 240930000231 Left Thigh (LT)
 #   paths:
@@ -35,7 +35,7 @@ devices:         # List of adress-path objects.
 #   paths:
 #   - /Meas/IMU9/52
 
-# - address: 0C:8C:DC:1B:73:62 # 240930000239 Left Calf (LC)
+# - address: 0C:8C:DC:1B:73:62 # 240930000239 Left Calf (RU)
 #   paths:
 #   - /Meas/IMU9/52
 

@@ -49,8 +49,8 @@ def main():
         # Setup the CLI interface
         interface = MovesenseCLI(config)
 
-        interface.run_remote() # For remote testing
-        # interface.run() # For local testing
+        # interface.run_remote() # For remote testing
+        interface.run() # For local testing
 
     except Exception as e:
         logger.error(e)
